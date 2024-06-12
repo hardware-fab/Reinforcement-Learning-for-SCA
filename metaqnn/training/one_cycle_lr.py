@@ -1,9 +1,8 @@
 import os
 import numpy as np
 import warnings
-
-from tensorflow.keras.callbacks import Callback
-from tensorflow.keras import backend as K
+from keras.callbacks import Callback
+from keras import backend as K
 
 
 # Code implemented by https://github.com/titu1994/keras-one-cycle
@@ -11,6 +10,8 @@ from tensorflow.keras import backend as K
 class OneCycleLR(Callback):
     def __init__(self,
                  max_lr,
+                 batch_size,
+                 samples,
                  end_percentage=0.1,
                  scale_percentage=None,
                  maximum_momentum=0.95,
@@ -66,10 +67,11 @@ class OneCycleLR(Callback):
 
         self.clr_iterations = 0.
         self.history = {}
-
+        
+        
         self.epochs = None
-        self.batch_size = None
-        self.samples = None
+        self.batch_size = batch_size #None
+        self.samples = samples #None
         self.steps = None
         self.num_iterations = None
         self.mid_cycle_id = None
@@ -143,8 +145,8 @@ class OneCycleLR(Callback):
         logs = logs or {}
 
         self.epochs = self.params['epochs']
-        self.batch_size = self.params['batch_size']
-        self.samples = self.params['samples']
+        #self.batch_size = self.params['batch_size']
+        #self.samples = self.params['samples']
         self.steps = self.params['steps']
 
         if self.steps is not None:

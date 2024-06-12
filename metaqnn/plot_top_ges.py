@@ -2,15 +2,15 @@ import argparse
 import os
 
 import tensorflow as tf
-from tensorflow import keras
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from tensorflow.keras.utils import to_categorical
 
+from tensorflow import keras
 from .grammar import q_learner
 from .training import tensorflow_runner
 from .training.one_cycle_lr import OneCycleLR
+from tensorflow.keras.utils import to_categorical
 
 
 def get_ge_data(model, results_dir, model_prefix):

@@ -1,6 +1,6 @@
-import tensorflow as tf
 import subprocess
 
+import tensorflow as tf
 
 def debug():
     phy_gpu = tf.config.experimental.list_physical_devices('GPU')
@@ -14,6 +14,8 @@ def debug():
 
     print("\n\nLogical GPU devices:")
     print(log_gpu)
+
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
     print("\n\nlspci -vnnn | grep -i 'nvidia':")
     print(lspci.stdout.decode('utf-8'))
