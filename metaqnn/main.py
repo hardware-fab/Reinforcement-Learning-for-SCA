@@ -301,16 +301,11 @@ if __name__ == '__main__':
 
     os.environ["CUDA_VISIBLE_DEVICES"] = args.number_gpu
 
-    while True:
-        try:
-            factory = QCoordinator(
-                path.normpath(
-                    path.join(_model.hyper_parameters.BULK_ROOT, "qlearner_logs")),
-                _model.state_space_parameters,
-                _model.hyper_parameters,
-                args.epsilon,
-                args.number_models_to_train,
-                args.reward_small)
-        except Exception:
-            pass
-            #raise Exception
+    factory = QCoordinator(
+        path.normpath(
+            path.join(_model.hyper_parameters.BULK_ROOT, "qlearner_logs")),
+        _model.state_space_parameters,
+        _model.hyper_parameters,
+        args.epsilon,
+        args.number_models_to_train,
+        args.reward_small)

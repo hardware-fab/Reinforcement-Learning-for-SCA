@@ -1,5 +1,5 @@
 output_states = 256  # Number of Classes/Output layer size
-input_size = 20_000 # Amount of measurements before they enter network/input layer size
+input_size = 1_000 # Amount of measurements before they enter network/input layer size
 
 layer_limit = 17  # Max number of layers
 

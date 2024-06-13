@@ -97,7 +97,7 @@ class TensorFlowRunner(object):
                                  folder: str = None) -> np.ndarray:
         
         ranks = attack.perform_attacks_per_key(predictions, self.hp.PTEXTS, self.hp.KEY,
-                                              self.hp.ATTACK_KEY_BYTE,  self.hp.NUM_ATTACKS, self.cipher)
+                                              self.hp.ATTACK_KEY_BYTE,  self.hp.NUM_ATTACKS)
         ge = np.mean(ranks, axis=0)
         
         if save_graph:

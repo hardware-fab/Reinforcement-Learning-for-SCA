@@ -2,7 +2,7 @@ from . import state_space_parameters as ssp
 import metaqnn.data_loader as data_loader
 import numpy as np
 
-MODEL_NAME = "chf_chameleon_5" # 5 for aggregation
+MODEL_NAME = "chf_chameleon"
 CIPHER = 'AES'
 
 # Number of output neurons
